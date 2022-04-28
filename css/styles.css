@@ -74,7 +74,7 @@ img {
   color: var(--header-logo-color);
 }
 
-.header-list {
+.header-navigation-list {
   display: flex;
 }
 
@@ -85,6 +85,7 @@ img {
   letter-spacing: 0.02em;
   color: inherit;
   padding: 10px 0px;
+  height: 12px;
 }
 .header-selected-page {
   color: var(--selected-page-color);
@@ -93,8 +94,20 @@ img {
 .header-item:not(:last-child) {
   margin-right: var(--tipical-margin-1);
 }
-.header-mail,
-.header-tel {
+.header-contact-item {
+  display: flex;
+  align-items: center;
+}
+
+.header-contact-list {
+  display: flex;
+  margin-left: auto;
+}
+.header-contact-item:not(:last-child) {
+  margin-right: var(--tipical-margin-2);
+}
+
+.header-contact-link {
   font-weight: 500;
   font-size: 14px;
   line-height: 1.2;
@@ -102,22 +115,26 @@ img {
   color: var(--main-color);
   padding: 10px 0px;
 }
-.header-contact {
-  margin-left: auto;
+
+.header-contact-icon {
+  margin-right: 10px;
+  fill: currentColor;
 }
-.header-mail {
-  margin-right: var(--tipical-margin-1);
-}
-.header-mail:hover,
-.header-tel:hover,
-.header-mail:focus,
-.header-tel:focus {
+
+.header-contact-link:hover,
+.header-contact-link:focus {
   color: var(--active-link-color);
 }
 /* -----hero----- */
 
 .hero {
   background-color: #2f303a;
+  flex-grow: 1;
+  background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url(../images/hero-background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
   padding: 200px 0;
 }
 
@@ -151,8 +168,21 @@ img {
   height: 50px;
   text-align: center;
   border: 0;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
 }
+
 /* -----specifics----- */
+.specifics-icon {
+  background-color: #f5f4fa;
+  border-radius: 4px;
+  padding: 25px 100px;
+
+  margin-bottom: 30px;
+
+  height: auto;
+  width: 100%;
+}
 
 .specifics-list {
   display: flex;
@@ -208,6 +238,9 @@ img {
 }
 .our-team-item {
   background: #ffffff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
 }
 .our-team-item:not(:last-child) {
   margin-right: var(--tipical-margin-2);
@@ -232,11 +265,78 @@ img {
 .our-team-text {
   margin: var(--tipical-margin-2) 0;
 }
+.out-team-soc-list {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.our-team-soc-link {
+  height: 44px;
+  width: 44px;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #afb1b8;
+}
+.our-team-soc-item + .our-team-soc-item {
+  margin-left: 10px;
+}
+.our-team-soc-link:hover,
+.our-team-soc-link:focus {
+  background-color: var(--active-link-color);
+  color: #ffffff;
+}
+.our-team-soc-icon {
+  fill: currentColor;
+}
+/* -----regular-customers------ */
+.regular-customers-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.regular-customers-list {
+  display: flex;
+  justify-content: center;
+}
+.regular-customers-item + .regular-customers-item {
+  margin-left: 30px;
+}
+.regular-customers-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 92px;
+  width: 170px;
+  color: #afb1b8;
+  border: 1px solid #afb1b8;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+.regular-customers-icon {
+  fill: currentColor;
+}
+
+.regular-customers-link:hover,
+.regular-customers-link:focus {
+  color: var(--active-link-color);
+  border-color: var(--active-link-color);
+}
+
 /* -----footer----- */
 
 .footer {
   background: #2f303a;
   padding: 60px 0;
+}
+footer .container {
+  display: flex;
+}
+.footer-text {
+  margin-right: 70px;
 }
 .footer-logo {
   font-family: var(--logo-font);
@@ -261,12 +361,11 @@ img {
   margin-top: 20px;
 }
 
-.footer-item:not(:last-child) {
+.footer-contact-item:not(:last-child) {
   margin-bottom: 9px;
 }
 
-.footer-mail,
-.footer-tel {
+.footer-contact {
   font-weight: 500;
   font-size: 14px;
   line-height: 1.7;
@@ -274,11 +373,46 @@ img {
   color: rgba(255, 255, 255, 0.6);
   display: block;
 }
-.footer-mail:hover,
-.footer-tel:hover,
-.footer-mail:focus,
-.footer-tel:focus {
+
+.footer-contact:hover,
+.footer-contact:focus {
   color: var(--active-link-color);
+}
+.footer-soc {
+  margin-top: 12px;
+}
+.footer-soc-title {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.2;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  color: #ffffff;
+}
+.footer-soc-list {
+  margin-top: 16px;
+  display: flex;
+}
+.footer-soc-link {
+  height: 44px;
+  width: 44px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.footer-soc-item + .footer-soc-item {
+  margin-left: 10px;
+}
+.footer-soc-link:hover,
+.footer-soc-link:focus {
+  background-color: var(--active-link-color);
+}
+.footer-soc-icon {
+  fill: #ffffff;
 }
 /* -----portfolio----- */
 .portfolio-btn {
@@ -293,13 +427,19 @@ img {
   font-family: inherit;
   border: 0;
   cursor: pointer;
-
+  border-radius: 4px;
   padding: 6px 22px;
 }
 
 .portfolio-btn:active {
   background: #2196f3;
   color: #ffffff;
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+.portfolio-btn:hover {
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 .portfolio-filter {
   justify-content: center;
@@ -319,10 +459,7 @@ img {
   margin-left: var(--tipical-margin-2);
   margin-top: var(--tipical-margin-2);
 }
-.portfolio-item {
-  border-bottom: 1px solid #eeeeee;
-  box-sizing: border-box;
-}
+
 .portfolio-item-title {
   font-size: 18px;
   line-height: 2;
@@ -338,7 +475,13 @@ img {
 }
 
 .portfolio-item-text {
-  margin-top: 20px;
-  margin-left: 24px;
-  margin-bottom: 20px;
+  padding: 23px 19px;
+  border-bottom: 1px solid #eeeeee;
+  border-left: 1px solid #eeeeee;
+  border-right: 1px solid #eeeeee;
+}
+.portfolio-item:hover,
+.portfolio-item:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
